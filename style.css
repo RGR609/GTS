@@ -87,7 +87,7 @@ li {
 .share-title a:hover {
     text-decoration: underline;
 }
-.share-date, .share-elapsed {
+.share-date, .share-elapsed, .share-description {
     font-size: 0.95em;
     color: #555;
     margin-bottom: 0.2em;
