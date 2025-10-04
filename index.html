@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTS分享内容</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>GTS分享内容</h1>
+        <!--
+        <nav>
+            <a href="index.html">首页</a> |
+            <a href="usage.html">链接使用说明</a>
+        </nav>
+        -->
+    </header>
+    <main>
+        <h2>分享链接列表</h2>
+        <div class="share-list">
+            <div class="share-card">
+                <img class="cover" src="image/翻1译分享 1.png" alt="封面图片">
+                <div class="share-info">
+                    <div class="share-title"><a href="#" target="_blank">XXX作品分享</a></div>
+                    <div class="share-date">日期：2025-10-04</div>
+                    <div class="share-elapsed">距离初次分享已过：<span class="elapsed" data-date="2025-09-20"></span></div>
+                </div>
+            </div>
+            <!--
+            <div class="share-card">
+                <img class="cover" src="https://via.placeholder.com/100x100?text=封面" alt="封面">
+                <div class="share-info">
+                    <div class="share-title"><a href="#" target="_blank">示例资源标题2</a></div>
+                    <div class="share-date">日期：2025-09-10</div>
+                    <div class="share-elapsed">距离初次分享已过：<span class="elapsed" data-date="2025-09-10"></span></div>
+                </div>
+            </div>
+            -->
+            <!-- 在这里添加更多分享卡片 -->
+        </div>
+        <script>
+        // 计算已过时间
+        function calcElapsed(dateStr) {
+            const now = new Date();
+            const date = new Date(dateStr);
+            const diff = now - date;
+            if (isNaN(diff)) return '';
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            if (days === 0) return '今天';
+            if (days === 1) return '1天';
+            return days + '天';
+        }
+        document.querySelectorAll('.elapsed').forEach(function(el) {
+            const d = el.getAttribute('data-date');
+            el.textContent = calcElapsed(d);
+        });
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2025 KIR105</p>
+    </footer>
+</body>
+</html>
